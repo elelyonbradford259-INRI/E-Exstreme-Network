@@ -1,0 +1,10 @@
+              <ELELi "jcxml">
+<icjcxml>
+<title> Aeiyen My Little Word </title>
+<h1>
+ InputString: ("3,3")
+   outputString: "3,3",
+String First Line: X=F=14.8176
+Implys: 1 = 14.8176.
+</h1><p>
+A*1+n*∅+I*J=4*1+2*∅+3*5=4+∅+15=19
