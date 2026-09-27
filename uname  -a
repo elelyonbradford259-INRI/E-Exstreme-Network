@@ -1,0 +1,8 @@
+novacom -1
+uname -a
+cat/etc/OS-release
+name="
+version 7.1
+sudo mkdir -p/opt/jdk
+sudo cp -rf/home/sivasai/jdk-8u251-linux-x64.tar.gz/opt/jdk/cd/opt/jdk/sudo.tar-ZXFjdk-8u251-linux-x64.tar.gz.1s
+update/jdk/jdk1.8.0_251
