@@ -1,0 +1,86 @@
+# Create a fork for another repository.
+~/Projects$ gh repo fork cli/cli
+- Forking cli/cli...
+✓ Created fork cli/cli
+? Would you like to clone the fork? Yes
+Cloning into 'cli'...
+ No Cloning=Cloned fork
+~/Projects$ cd cli
+~/Projects/cli$# Skipping remote prompts using flags
+~/Projects/cli$ gh repo fork --remote=false
+- Forking cli/cli...
+✓ Created fork user/cli
+~/Projects/cli$
+# Skipping clone prompts using flags
+~/Projects$ gh repo fork cli/cli --clone=false
+- Forking cli/cli...
+✓ Created fork user/cli
+~/Projects$# Viewing a list of open pull requests
+~/Projects/my-project$ gh pr list
+
+Pull requests for owner/repo
+
+#14  Upgrade to Prettier 1.19                           prettier
+#14  Extend arrow navigation in lists for MacOS         arrow-nav
+#13  Add Support for Windows Automatic Dark Mode        dark-mode
+#8   Create and use keyboard shortcut react component   shortcut
+
+~/Projects/my-project$
+# Viewing a list of open issues
+~/Projects/my-project$ gh issue list
+
+Issues for owner/repo
+
+#14  Update the remote url if it changed  (bug)
+#14  PR commands on a detached head       (enhancement)
+#13  Support for GitHub Enterprise        (wontfix)
+#8   Add an easier upgrade command        (bug)
+
+~/Projects/my-project$# Viewing a list of closed pull requests assigned to a user
+~/Projects/my-project$ gh pr list --state closed --assignee user
+
+Pull requests for owner/repo
+
+#13  Upgrade to Electron 7         electron-7
+#8   Release Notes Writing Guide   release-notes
+
+~/Projects/my-project$
+# Viewing a list of closed issues assigned to a user
+~/Projects/my-project$ gh issue list --state closed --assignee user
+
+Issues for owner/repo
+
+#13  Enable discarding submodule changes  (bug)
+#8   Upgrade to latest react              (upgrade)
+
+~/Projects/my-project$# Viewing the status of your relevant pull requests
+~/Projects/my-project$ gh pr status
+Current branch
+  #12 Remove the test feature [user:patch-2]
+   - All checks failing - Review required
+
+Created by you
+  You have no open pull requests
+
+Requesting a code review from you
+  #13 Fix tests [branch]
+  - 3/4 checks failing - Review required
+  #15 New feature [branch]
+   - Checks passing - Approved
+
+~/Projects/my-project$
+Issues
+# Viewing issues relevant to you
+~/Projects/my-project$ gh issue status
+Issues assigned to you
+  #8509 [Fork] Improve how Desktop handles forks  (epic:fork, meta)
+
+Issues mentioning you
+  #8938 [Fork] Add create fork flow entry point at commit warning  (epic:fork)
+  #8509 [Fork] Improve how Desktop handles forks  (epic:fork, meta)
+
+Issues opened by you
+  #8936 [Fork] Hide PR number badges on branches that have an upstream PR  (epic:fork)
+  #6386 Improve no editor detected state on conflicts modal  (enhancement)
+
+~/Projects/my-project$
