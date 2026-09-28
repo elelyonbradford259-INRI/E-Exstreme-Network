@@ -44,6 +44,41 @@ Several key features:
   Define job labels and customize virtual machine resources to fit Your needs.
 
 ## Quickstart
+<!doctype html3>
+
+<html3>
+<tr><td><th>
+<IncomeQ3>Defined By $A$3 Absolute Cell Reference "enter",123".
+In Cell May Automatically Change To"$123.00".
+Press Tab Or Enter Or Click Outside The Cell.
+Active Cell Is Formatted For Data Or A Text.
+Text"1/2/3" May Change To "01/02/2003".
+Cell A20 May Contain A Formula That Produces The Result Of The Summation Of Cells A1-A25.
+Cell 5 May Contain A Formula That Averages All The Numbers In The B Column.
+# AAC videos "live" Or "on-the-fly".
+Often Use H.264,HEVC,or VP9.
+[#page:one#]--StartSwitch("-'1*");
+    --End("*,-'1*);
+** seqence: "*1*123*"
+<=∞=><∞>
+[FirebaseApp.AUTH()
+[getauth()Firebaseapp][authdomain]measure ID              <ELELi "jcxml">
+<icjcxml>
+<title> Aeiyen My Little Word </title>
+<h1>
+ InputString: ("3,3")
+   outputString: "3,3",
+String First Line: X=F=14.8176
+Implys: 1 = 14.8176.
+</h1><p>
+A*1+n*∅+I*J=4*1+2*∅+3*5=4+∅+15=19novacom -1
+uname -a
+cat/etc/OS-release
+name="
+version 7.1
+sudo mkdir -p/opt/jdk
+sudo cp -rf/home/sivasai/jdk-8u251-linux-x64.tar.gz/opt/jdk/cd/opt/jdk/sudo.tar-ZXFjdk-8u251-linux-x64.tar.gz.1s
+update/jdk/jdk1.8.0_251
 
 ```bash
 $ fireactions --help
