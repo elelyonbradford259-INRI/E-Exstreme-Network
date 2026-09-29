@@ -121,7 +121,7 @@ See the [Guide](https://fireactions.io/latest/) for installation and configurati
 See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on how to contribute to Fireactions.
 
 ## License
-***
+
 <?xml version="1.0" encoding="us-ascii"?>
 <feed
 xmlns="http://www.w3.org/2005/Atom"
@@ -137,6 +137,7 @@ href="https://lore.kernel.org/git/xmqqh5j9mdpx.fsf@gitster.g/"/><content
 type="xhtml"><div
 xmlns="http://www.w3.org/1999/xhtml"><pre
 style="white-space:pre-wrap">On Mon, Sep 28, 2026, at 20:29, Junio C Hamano wrote:
+```
 <span
 class="q">&gt; kristofferhaugsbakk@fastmail.com writes:
 &gt;
