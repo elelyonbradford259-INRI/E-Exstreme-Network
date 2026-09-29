@@ -176,10 +176,12 @@ Resolve a URL starting with &#34;^/&#34; against the superproject&#39;s remote,
 like &#34;../&#34;, but from the root of the server. Protocol, user, host and
 port stay the same. For &#34;^/org/lib.git&#34;:
 
-    <a
-href="https://host/me/super.git">https://host/me/super.git</a>      -&gt;  <a
-href="https://host/org/lib.git">https://host/org/lib.git</a>
-    git@host:group/sub/super.git   -&gt;  git@host:org/lib.git
+ahref="https://host/me/super.git
+https://host/me/super.git</a>
+-&gt; a href="https://host/org/lib.git
+https://host/org/lib.git
+</a>
+    git@host:group/sub/super.git-&gt;  git@host:org/lib.git
 
 Unlike &#34;../&#34;, &#34;^/&#34; fails in a superproject cloned from a local path or
 without a remote, since there is no server. It also fails for
@@ -253,11 +255,12 @@ class="del">-working directory is used instead.
 </span><span
 class="add">+working directory is used instead. A `^/` path needs a default remote
 +with a host.
-</span> +
- The optional argument _&lt;path&gt;_ is the relative location for the cloned
+</span> 
++ The optional argument _&lt;path&gt;
+_ is the relative location for the
  submodule to exist in the superproject. If _&lt;path&gt;_ is not given, the
 <span
-class="head">diff --git a/Documentation/gitmodules.adoc b/Documentation/gitmodules.adoc
+class="head">diff--git a/Documentation/gitmodules.adoc b/Documentation/gitmodules.adoc
 index fd96639806..9f6cc9a4ef 100644
 --- a/Documentation/gitmodules.adoc
 +++ b/Documentation/gitmodules.adoc
@@ -267,14 +270,21 @@ class="hunk">@@ -31,9 +31,10 @@ submodule.&lt;name&gt;.path::
  submodule.&lt;name&gt;.url::
  	Defines a URL from which the submodule repository can be cloned.
 <span
-class="del">-	This may be either an absolute URL ready to be passed to
--	linkgit:git-clone[1] or (if it begins with `./` or `../`) a location
--	relative to the superproject&#39;s origin repository.
+class="del">
+-	This may be either an absolute URL ready to be passed to
+-	linkgit:git-no_clone[1] or 
+(if it begins with `./` or `../`) 
+a location
+-	relative to the superproject
+&#39;s origin repository.
 </span><span
 class="add">+	This may be an absolute URL ready to be passed to
-+	linkgit:git-clone[1], (if it begins with `./` or `../`) a location
-+	relative to the superproject&#39;s origin repository, or (if it begins
-+	with `^/`) an absolute path on the server of that repository.
++	linkgit:git-clone[1], 
+(if it begins with `./` or `../`)
+a location
++	relative to the superproject&#39;s origin repository, or 
+(if it begins 	with`^/`) 
+an absolute path on the server of that repository.
 </span> 
  In addition, there are a number of optional keys:
  
@@ -494,12 +504,11 @@ class="add">+static const char *skip_bracketed_host(const char *host)
 +		strbuf_setlen(&#38;sb, sb.len - 1);
 +	return strbuf_detach(&#38;sb, NULL);
 +}
-+
-</span> int valid_remote_name(const char *name)
++</span> int valid_remote_name(const char *name)
  {
  	int result;
-<span
-class="head">diff --git a/remote.h b/remote.h
+<spanclass="head">diff 
+--git a/remote.h b/remote.h
 index cca02033b9..8a759ae20d 100644
 --- a/remote.h
 +++ b/remote.h
@@ -507,8 +516,7 @@ index cca02033b9..8a759ae20d 100644
 class="hunk">@@ -478,6 +478,21 @@ void apply_push_cas(struct push_cas_option *, struct remote *, struct ref *);
 </span> char *relative_url(const char *remote_url, const char *url,
  		   const char *up_path);
- 
-<span
+ <span
 class="add">+/*
 + * The `url` argument starts with &#34;^/&#34; and names a repository relative to
 + * the root of the server that `remote_url` points to: the path of
@@ -518,17 +526,18 @@ class="add">+/*
 + *
 + * remote_url                 url            outcome
 + * <a
-href="https://a.com/b/c">https://a.com/b/c</a>          ^/d/e          <a
-href="https://a.com/d/e">https://a.com/d/e</a>
-+ * ssh://u@a.com:22/b/c       ^/d/e          ssh://u@a.com:22/d/e
-+ * u@a.com:b/c                ^/d/e          u@a.com:d/e
-+ * u@a.com:/b/c               ^/d/e          u@a.com:/d/e
+href="https://a.com/b/c">https://a.com/b/c</a>          ^/d/e 
+<ahref="https://a.com/d/e">
+https://a.com/d/e
+</a>
++ * ssh://u@a.com:22/b/c^/d/e          ssh://u@a.com:22/d/e
++ * u@a.com:b/c^/d/usau@a.com:d/e
++ * u@a.com:/b/c               ^/d/usa
+eu@a.com:/d/e
 + */
 +char *root_relative_url(const char *remote_url, const char *url);
-+
 </span> int valid_remote_name(const char *name);
- 
- #endif
+  #endif
 <span
 class="head">diff --git a/submodule-config.c b/submodule-config.c
 index 37c3be377b..dfa819112c 100644
@@ -538,8 +547,7 @@ index 37c3be377b..dfa819112c 100644
 class="hunk">@@ -237,9 +237,10 @@ int check_submodule_name(const char *name)
 </span> 	return 0;
  }
- 
-<span
+ <span
 class="del">-static int submodule_url_is_relative(const char *url)
 </span><span
 class="add">+int submodule_url_is_relative(const char *url)
@@ -549,8 +557,7 @@ class="del">-	return starts_with_dot_slash(url) || starts_with_dot_dot_slash(url
 </span><span
 class="add">+	return starts_with_dot_slash(url) || starts_with_dot_dot_slash(url) ||
 +	       starts_with(url, &#34;^/&#34;);
-</span> }
- 
+</span> } 
  /*
 <span
 class="hunk">@@ -342,6 +343,9 @@ int check_submodule_url(const char *url)
@@ -562,8 +569,7 @@ class="add">+		if (skip_prefix(url, &#34;^/&#34;, &#38;next) &#38;&#38;
 +		    (*next == &#39;:&#39; || *next == &#39;/&#39;))
 +			return -1;
 </span> 	}
- 
- 	else if (url_to_curl_url(url, &#38;curl_url)) {
+  	else if (url_to_curl_url(url, &#38;curl_url)) {
 <span
 class="head">diff --git a/submodule-config.h b/submodule-config.h
 index 755570d5d1..3e947291d5 100644
@@ -572,15 +578,13 @@ index 755570d5d1..3e947291d5 100644
 </span><span
 class="hunk">@@ -94,6 +94,12 @@ int check_submodule_name(const char *name);
 </span> /* Returns 0 if the URL valid per RFC3986 and -1 otherwise. */
- int check_submodule_url(const char *url);
- 
+ int check_submodule_url(const char *url); 
 <span
 class="add">+/*
 + * Returns 1 if the URL is resolved against the superproject&#39;s remote,
 + * i.e. starts with &#34;./&#34;, &#34;../&#34; or &#34;^/&#34;, and 0 otherwise.
 + */
 +int submodule_url_is_relative(const char *url);
-+
 </span> /*
   * Note: these helper functions exist solely to maintain backward
   * compatibility with &#39;fetch&#39; and &#39;update_clone&#39; storing configuration in
@@ -595,14 +599,18 @@ class="hunk">@@ -123,7 +123,12 @@ static int cmd__submodule_resolve_relative_url
  		up_path = NULL;
  
 <span
-class="del">-	res = relative_url(remoteurl, url, up_path);
+class="del">
+-res = relative_url(remoteurl, url, up_path);
 </span><span
-class="add">+	if (starts_with(url, &#34;^/&#34;))
+class="add">
++	if (starts_with(url, &#34;^/&#34;))
 +		res = root_relative_url(remoteurl, url);
 +	else
 +		res = relative_url(remoteurl, url, up_path);
 +	if (!res)
-+		die(&#34;cannot resolve &#39;%s&#39; against &#39;%s&#39;&#34;, url, remoteurl);
++		die(&#34;cannot resolve &#39;%s&#39; 
+against &#39;%s&#39;&#34;,
+url, remoteurl);
 </span> 	puts(res);
  	free(res);
  	free(remoteurl);
@@ -613,11 +621,10 @@ index 3ca7b27104..9d3ac94aae 100644
 +++ b/t/meson.build
 </span><span
 class="hunk">@@ -918,6 +918,7 @@ integration_tests = [
-</span>   &#39;t7424-submodule-mixed-ref-formats.sh&#39;,
-   &#39;t7425-submodule-gitdir-path-extension.sh&#39;,
-   &#39;t7426-submodule-get-default-remote.sh&#39;,
-<span
-class="add">+  &#39;t7427-submodule-root-relative-url.sh&#39;,
-</span>   &#39;t7450-bad-git-dotfi
+</span>   &#39;t7424-submodule-mixed-ref-formats.sh&#39;,  &#39;t7425-submodule-gitdir-path-extension.sh&#39; &#39;t7426-submodule-get-default-remote.sh&#39,
+<span class="add">
++&#39;t7427-submodule-root-relative-url.sh&#39,
+</span>
+&#39;t7450-bad-git-dotfi
 
 See [LICENSE](LICENSE)
