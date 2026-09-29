@@ -372,7 +372,7 @@ class="add">+			url = resolve_relative_url_gently(oldurl, NULL, 1);
 <span
 class="hunk">@@ -618,8 +631,7 @@ static void init_submodule(const char *path, const char *prefix,
 </span> 		url = xstrdup(sub-&gt;url);
- 
+ ```
  		/* Possibly a url relative to parent */
 <span
 class="del">-		if (starts_with_dot_dot_slash(url) ||
@@ -597,7 +597,7 @@ index ea9bef0904..f28daf52fe 100644
 class="hunk">@@ -123,7 +123,12 @@ static int cmd__submodule_resolve_relative_url(int argc, const char **argv)
 </span> 	if (!strcmp(up_path, &#34;(null)&#34;))
  		up_path = NULL;
- 
+``` 
 <span
 class="del">
 -res = relative_url(remoteurl, url, up_path);
