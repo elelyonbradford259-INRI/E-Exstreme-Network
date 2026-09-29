@@ -224,7 +224,7 @@ href="https://gitlab.com/gitlab-org/gitlab/-/issues/393295">https://gitlab.com/g
  t/t7450-bad-git-dotfiles.sh            |   5 +
  12 files <a href="https://lore.kernel.org/git/20260929185122.3127574-1-lightofmysoul@gmail.com/#related">changed</a>, 366 insertions(+), 24 deletions(-)
  create mode 100755 t/t7427-submodule-root-relative-url.sh
-
+```
 <span
 class="head">diff --git a/Documentation/git-submodule.adoc b/Documentation/git-submodule.adoc
 index 722d827908..f512625eb8 100644
@@ -298,7 +298,6 @@ class="hunk">@@ -50,7 +50,8 @@ static char *get_default_remote(void)
 </span> 	return xstrdup(repo_default_remote(the_repository));
  }
  
-<span
 class="del">-static char *resolve_relative_url(const char *rel_url, const char *up_path, int quiet)
 </span><span
 class="add">+static char *resolve_relative_url_gently(const char *rel_url,
@@ -306,8 +305,7 @@ class="add">+static char *resolve_relative_url_gently(const char *rel_url,
 </span> {
  	char *remoteurl, *resolved_url;
  	char *remote = get_default_remote();
-<span
-class="hunk">@@ -58,14 +59,17 @@ static char *resolve_relative_url(const char *rel_url, const char *up_path, int
+class="hunk@@ -58,14 +59,17 @@ static char *resolve_relative_url(const char *rel_url, const char *up_path, int
 </span> 
  	strbuf_addf(&#38;remotesb, &#34;remote.%s.url&#34;, remote);
  	if (repo_config_get_string(the_repository, remotesb.buf, &#38;remoteurl)) {
