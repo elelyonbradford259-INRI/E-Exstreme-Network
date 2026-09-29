@@ -114,13 +114,14 @@ Flags:
 Use "fireactions [command] --help" for more information about a command.
 ```
 
-See the [User Guide](https://fireactions.io/latest/) for installation and configuration instructions.
+See the [Guide](https://fireactions.io/latest/) for installation and configuration instructions.
 
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on how to contribute to Fireactions.
 
 ## License
+***
 <?xml version="1.0" encoding="us-ascii"?>
 <feed
 xmlns="http://www.w3.org/2005/Atom"
