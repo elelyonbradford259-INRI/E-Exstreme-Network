@@ -47,7 +47,9 @@ Several key features:
 <!doctype html3>
 
 <html3>
-<tr><td><th>
+<tr>
+<td>
+<th>
 <IncomeQ3>Defined By $A$3 Absolute Cell Reference "enter",123".
 In Cell May Automatically Change To"$123.00".
 Press Tab Or Enter Or Click Outside The Cell.
@@ -70,7 +72,8 @@ Often Use H.264,HEVC,or VP9.
    outputString: "3,3",
 String First Line: X=F=14.8176
 Implys: 1 = 14.8176.
-</h1><p>
+</h1>
+<p>
 A*1+n*∅+I*J=4*1+2*∅+3*5=4+∅+15=19novacom -1
 uname -a
 cat/etc/OS-release
@@ -116,7 +119,8 @@ Use "fireactions [command] --help" for more information about a command.
 
 See the [Guide](https://fireactions.io/latest/) for installation and configuration instructions.
 
-## Contributing
+***
+[Contributing]
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on how to contribute to Fireactions.
 
