@@ -42,7 +42,8 @@ Several key features:
 - **Customizable**
 
   Define job labels and customize virtual machine resources to fit Your needs.
-****
+
+```
 [Quickstart]
 <!doctype html3>
 
