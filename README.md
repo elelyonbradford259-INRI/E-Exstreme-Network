@@ -43,13 +43,13 @@ Several key features:
 
   Define job labels and customize virtual machine resources to fit Your needs.
 
-< ## InputString: """abc""/987>>
- *  n = constant (x)
- *  r = (n*array(x,*,y)-x,y/)sqrt
- *  ((n*sqsum(x)-x12)*(n*sqsum(y)-y^22/),
+*/** ## InputString: """abc""/987>>
+ */**  n = constant (x)
+ */**  r = (n*array(x,*,y)-x,y/)sqrt
+ */**  ((n*sqsum(x)-x12)*(n*sqsum(y)-y^22/),
 < ## Input Select Matrix Numerical Calculatio< n/nPick 
- < ## One Inverse dialogue[EnterMatrix,A Mattix Inverse (A))):" 
- ## A=0.1+1+10,CB,log,A)>>B=-0.1+0+1,c=.3+4+5 >polynomial CB,C,1)
+ */** ## One Inverse dialogue[EnterMatrix,A Mattix Inverse (A))):" 
+*/** ## A=0.1+1+10,CB,log,A)>>B=-0.1+0+1,c=.3+4+5 >polynomial CB,C,1)
 * A = 1+2+3
 * B = 4+5+6
 * (C,A,+,B)>>C=+5.0+7.0+9.0;
