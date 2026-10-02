@@ -43,10 +43,10 @@ Several key features:
 
   Define job labels and customize virtual machine resources to fit Your needs.
 
-## --StartSwitch("-'1*");
+ --StartSwitch("-'1*");
     --End("*,-'1*);
 -- seqence: "*1*123*"
-## Lï17īD D5 F7ßîœñ: " fusia energy Release-- ½MaVa²+½MbV²/b=ᐛD-D-fusia carrys 75% energy,
+` Lï17īD D5 F7ßîœñ: " fusia energy Release-- ½MaVa²+½MbV²/b=ᐛD-D-fusia carrys 75% energy,
 Bio-metric: PnPoe-mgh/kT,
 
 <=∞=><∞>
