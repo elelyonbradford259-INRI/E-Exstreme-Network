@@ -47,7 +47,8 @@ Several key features:
     --End("*,-'1*);
 ** seqence: "*1*123*"
 ## Lï17īD D5 F7ßîœñ: " fusia energy Release ½MaVa²+½MbV²/b=ᐛD-D-fusia carrys 75% energy,
-Bio-metric: PnPoe-mgh/kT
+Bio-metric: PnPoe-mgh/kT,
+
 <=∞=><∞>
 [FirebaseApp.AUTH()
 [getauth()Firebaseapp][authdomain]measure ID
